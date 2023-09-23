@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Minor_Project</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Semester">Semester</string>
+    <string name="welcome_to_">Welcome to \nJIIT Question Paper Archive</string>
+    <string name="subject">Subject</string>
+    <string name="term">Term</string>
+    <string name="buttonText">GO</string>
+</resources>
