@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "915995499079",
+    "project_id": "jiit-prepwizard",
+    "storage_bucket": "jiit-prepwizard.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915995499079:android:2277d1a839ca4c9da06f62",
+        "android_client_info": {
+          "package_name": "com.example.minor_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAed_HLRwlar9QIZCo8ao9ysi6NznL8zqA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
