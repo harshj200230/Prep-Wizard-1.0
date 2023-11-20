@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.minor_project.databinding.ActivityPdfviewBinding;
 import com.google.firebase.FirebaseApp;
@@ -49,7 +50,9 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
     }
 
     private void viewAllFiles() {
-        databaseReference = FirebaseDatabase.getInstance().getReference("uploads");
+        Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
+        databaseReference = FirebaseDatabase.getInstance().getReference("pdfs");
+        Toast.makeText(this, "working2", Toast.LENGTH_SHORT).show();
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -59,9 +62,11 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
                     uploads.add(pdfClass);
                 }
 
+
                 // Notify the adapter that the data has changed
                 adapter.notifyDataSetChanged();
             }
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -71,7 +76,7 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
     }
     private void viewSampleFiles() {
         // Sample data for testing
-        uploads.clear();
+//        uploads.clear();
         uploads.add(new pdfClass("Sample PDF 1", "https://content.bridgepointeducation.com/curriculum/file/48d7a132-3143-4b60-a261-5d9dca5b88de/1/Sample%20Business%20Report.pdf"));
         uploads.add(new pdfClass("Sample PDF 2", "https://firebasestorage.googleapis.com/v0/b/jiit-prepwizard.appspot.com/o/uploads%2FConstitutionPBL%5B1%5D.docx.pdf?alt=media&token=5140ac16-d54d-4266-a9db-08a49fce5270"));
 
