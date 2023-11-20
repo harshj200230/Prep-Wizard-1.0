@@ -3,7 +3,9 @@ package com.example.minor_project;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 
 import com.example.minor_project.databinding.ActivityMainBinding;
@@ -38,6 +40,17 @@ public class MainActivity extends AppCompatActivity {
         );
 
         binding.termSpinner.setAdapter(availabilityAdapter2);
+
+        binding.goButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Subject.class);
+                startActivity(intent);
+
+            }
+        });
+
+
 
 
     }
