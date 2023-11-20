@@ -7,6 +7,20 @@
     android:backgroundTint="#F5F5F5"
     tools:context=".MainActivity">
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/gradient_statusbar"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/white" />
+
     <Button
         android:id="@+id/button2"
         android:layout_width="250dp"
@@ -23,19 +37,6 @@
         android:topLeftRadius="20dp"
         android:topRightRadius="20dp"/>
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@drawable/gradient_statusbar"
-        android:elevation="8dp"
-        android:gravity="center"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:titleTextColor="@color/white" />
 
     <!--
     Font family: Pacifico
@@ -51,7 +52,7 @@
         android:paddingTop="153dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
@@ -96,29 +97,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp" />
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="106dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:paddingStart="30dp"
-                android:text="@string/subject" />
-
-            <Spinner
-                android:id="@+id/spinner3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:contentDescription="@string/subject"
-                android:minHeight="48dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="45dp" />
 
             <TextView
                 android:id="@+id/textView3"
