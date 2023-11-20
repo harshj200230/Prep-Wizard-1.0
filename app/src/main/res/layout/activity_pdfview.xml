@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg">
+    android:background="#F5F5F5">
 
     <View
         android:id="@+id/view"
@@ -22,14 +22,16 @@
 
     <ImageView
         android:id="@+id/backButton2"
-        android:layout_width="62dp"
-        android:layout_height="51dp"
+        android:layout_width="37dp"
+        android:layout_height="32dp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/view"
-        app:srcCompat="@drawable/back" />
+        app:layout_constraintVertical_bias="0.484"
+        app:srcCompat="@drawable/icon"
+        android:contentDescription="TODO" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
