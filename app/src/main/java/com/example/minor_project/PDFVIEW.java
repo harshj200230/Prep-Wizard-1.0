@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.minor_project.databinding.ActivityPdfviewBinding;
@@ -47,6 +48,15 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
         viewSampleFiles();
 
         viewAllFiles();
+
+        binding.backButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+
     }
 
     private void viewAllFiles() {
