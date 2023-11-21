@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         binding.semesterSpinner.setAdapter(availabilityAdapter1);
 
-        String[] availabilityOptions2 = {"I", "II","III"};
+        String[] availabilityOptions2 = {"t1", "t2","t3"};
 
         ArrayAdapter<String> availabilityAdapter2 = new ArrayAdapter<>(
                 this,
@@ -44,11 +44,22 @@ public class MainActivity extends AppCompatActivity {
         binding.goButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Subject.class);
-                startActivity(intent);
+                // Get selected values from spinners
+                String selectedSemester = binding.semesterSpinner.getSelectedItem().toString();
+                String selectedTerm = binding.termSpinner.getSelectedItem().toString();
 
+                // Create an intent to start the Subject activity
+                Intent intent = new Intent(MainActivity.this, Subject.class);
+
+                // Pass the selected values to the Subject activity
+                intent.putExtra("selectedSemester", selectedSemester);
+                intent.putExtra("selectedTerm", selectedTerm);
+
+                // Start the Subject activity
+                startActivity(intent);
             }
         });
+
 
 
 

@@ -31,9 +31,19 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         binding = ActivityPdfviewBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        Intent intent = getIntent();
+        if (intent != null) {
+            String selectedSubject = intent.getStringExtra("selectedSubject");
+            String selectedTerm = intent.getStringExtra("selectedTerm");
+            viewSpecificFiles(selectedSubject,selectedTerm);
+            Toast.makeText(this, ""+selectedSubject, Toast.LENGTH_SHORT).show();
+            // Now you have the selected subject and term values.
+            // You can use them as needed in your activity.
+        }
 
         FirebaseApp.initializeApp(this);
 
@@ -48,7 +58,7 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
 //        viewSampleFiles();
 
         //viewAllFiles();
-        viewSpecificFiles("bigdata","t1","2022");
+
 
         binding.backButton2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,31 +95,33 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
         });
     }
 
-    private void viewSpecificFiles(String subject, String term, String year) {
+    private void viewSpecificFiles(String subject, String term) {
         Toast.makeText(this, "Getting your files please wait 😊", Toast.LENGTH_SHORT).show();
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Uploads");
-        databaseReference.orderByChild("name").equalTo(subject + "_" + term + "_" + year)
-                .addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        uploads.clear(); // Clear existing data before adding new data
+        databaseReference.orderByChild("name").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                uploads.clear(); // Clear existing data before adding new data
 
-                        for (DataSnapshot postSnapshot : snapshot.getChildren()) {
-                            pdfClass pdfClass = postSnapshot.getValue(pdfClass.class);
-                            uploads.add(pdfClass);
-                        }
-
-                        // Notify the adapter that the data has changed
-                        adapter.notifyDataSetChanged();
+                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
+                    pdfClass pdfClass = postSnapshot.getValue(pdfClass.class);
+                    if (pdfClass != null && pdfClass.getName().startsWith(subject + "_" + term)) {
+                        uploads.add(pdfClass);
                     }
+                }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        // Handle onCancelled
-                    }
-                });
+                // Notify the adapter that the data has changed
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Handle onCancelled
+            }
+        });
     }
+
 
     private void viewSampleFiles() {
         // Sample data for testing

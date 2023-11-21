@@ -21,13 +21,22 @@ public class Subject extends AppCompatActivity {
         binding = ActivitySubjectBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // Inside onCreate method in Subject activity
+        Intent intent = getIntent();
+        if (intent != null) {
+            String selectedSemester = intent.getStringExtra("selectedSemester");
+            String selectedTerm = intent.getStringExtra("selectedTerm");
+
+        }
+
+
         ListView myListView = binding.myListView;
         ArrayList<String> subjects = new ArrayList<>();
         subjects.add("Maths I");
         subjects.add("Physics I");
         subjects.add("SDF II");
-        subjects.add("Introduction To DSA");
-        subjects.add("Introduction TO BigData");
+        subjects.add("literature");
+        subjects.add("bigdata");
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, subjects);
         myListView.setAdapter(arrayAdapter);
@@ -39,11 +48,16 @@ public class Subject extends AppCompatActivity {
                 // Get the selected subject
                 String selectedSubject = subjects.get(position);
 
+                // Get the selected term from the intent
+                Intent receivedIntent = getIntent();
+                String selectedTerm = receivedIntent.getStringExtra("selectedTerm");
+
                 // Create an intent to start the PDFVIEW activity
                 Intent intent = new Intent(Subject.this, PDFVIEW.class);
 
-                // Pass data to the next activity if needed
+                // Pass data to the PDFVIEW activity
                 intent.putExtra("selectedSubject", selectedSubject);
+                intent.putExtra("selectedTerm", selectedTerm);
 
                 // Start the PDFVIEW activity
                 startActivity(intent);
