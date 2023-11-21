@@ -4,6 +4,5 @@
     <item
         android:right="10dp"
         android:gravity="end|center_vertical"
-        android:drawable="@drawable/drop_down_arrow"
-        />
+        android:drawable="@drawable/drop_down_arrow" />
 </layer-list>

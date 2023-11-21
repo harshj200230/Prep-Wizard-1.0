@@ -10,4 +10,6 @@
     <color name="statusBar">#001F3F</color>
     <color name="pastel_orange_light">#FBE8DF</color>
     <color name="pastel_orange_txt_highlight">#FF8F59</color>
+    <color name="bg">#ECF0F1</color>
+    <color name="text">#333333</color>
 </resources>
