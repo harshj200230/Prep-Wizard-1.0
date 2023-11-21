@@ -37,12 +37,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:titleTextColor="@color/white" />
 
-    <!--
-    Font family: Pacifico
-    Line height: 24sp
-    -->
-
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -59,7 +53,6 @@
             android:id="@+id/welcome_to_"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_semibold"
             android:gravity="center|top"
             android:shadowDx="4"
             android:text="@string/welcome_to_"
