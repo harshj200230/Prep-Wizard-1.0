@@ -35,6 +35,16 @@ public class Upload extends AppCompatActivity {
         binding = ActivityUploadBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Upload.this, PDFVIEW.class);
+                startActivity(intent);
+            }
+        });
+
+
+
         // Database
         storageReference = FirebaseStorage.getInstance().getReference();
         databaseReference = FirebaseDatabase.getInstance().getReference("Uploads");
@@ -69,7 +79,7 @@ public class Upload extends AppCompatActivity {
         progressDialog.setTitle("Uploading...");
         progressDialog.show();
 
-        StorageReference reference = storageReference.child("Uploads/"+System.currentTimeMillis()+".pdf");
+        StorageReference reference = storageReference.child("Uploads/"+binding.pdfName.getText().toString()+".pdf");
         reference.putFile(data)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override

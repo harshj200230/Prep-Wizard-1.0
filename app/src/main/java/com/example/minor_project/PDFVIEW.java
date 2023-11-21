@@ -45,9 +45,10 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 
-        viewSampleFiles();
+//        viewSampleFiles();
 
-        viewAllFiles();
+        //viewAllFiles();
+        viewSpecificFiles("bigdata","t1","2022");
 
         binding.backButton2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,9 +61,8 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
     }
 
     private void viewAllFiles() {
-        Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
-        databaseReference = FirebaseDatabase.getInstance().getReference("pdfs");
-        Toast.makeText(this, "working2", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Getting your files please wait 😊", Toast.LENGTH_SHORT).show();
+        databaseReference = FirebaseDatabase.getInstance().getReference("Uploads");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -84,6 +84,33 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
             }
         });
     }
+
+    private void viewSpecificFiles(String subject, String term, String year) {
+        Toast.makeText(this, "Getting your files please wait 😊", Toast.LENGTH_SHORT).show();
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("Uploads");
+        databaseReference.orderByChild("name").equalTo(subject + "_" + term + "_" + year)
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        uploads.clear(); // Clear existing data before adding new data
+
+                        for (DataSnapshot postSnapshot : snapshot.getChildren()) {
+                            pdfClass pdfClass = postSnapshot.getValue(pdfClass.class);
+                            uploads.add(pdfClass);
+                        }
+
+                        // Notify the adapter that the data has changed
+                        adapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        // Handle onCancelled
+                    }
+                });
+    }
+
     private void viewSampleFiles() {
         // Sample data for testing
 //        uploads.clear();
