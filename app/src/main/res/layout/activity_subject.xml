@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/bg"
+    android:background="@drawable/gradient_statusbar"
     android:orientation="vertical"
     tools:context=".Subject">
 
@@ -24,17 +24,16 @@
     </View>
 
     <View
-        android:id="@+id/f76_5h9n_14"
-        android:layout_width="410dp"
-        android:layout_height="479dp"
-        android:layout_alignParentTop="true"
+        android:id="@+id/view2"
+        android:layout_width="413dp"
+        android:layout_height="611dp"
+        android:layout_marginTop="1dp"
         android:alpha="0.1"
-        android:background="@drawable/wizard"
-        android:elevation="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView"
+        android:background="@drawable/bg"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
     <ImageView
         android:id="@+id/backButton"
@@ -49,38 +48,44 @@
         app:layout_constraintVertical_bias="0.4"
         app:srcCompat="@drawable/icon" />
 
-    <Button
-        android:id="@+id/go_button2"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#004080"
-        android:bottomLeftRadius="50dp"
-        android:bottomRightRadius="50dp"
-        android:text="@string/buttonText"
-        android:topLeftRadius="20dp"
-        android:topRightRadius="20dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <!--
     Font family: Pacifico
     Line height: 24sp
     -->
 
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/go_button2"
+        android:layout_width="123dp"
+        android:layout_height="59dp"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="72dp"
+        android:backgroundTint="#DAA520"
+        android:elevation="15dp"
+        android:text="Go"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:cornerRadius="8dp"
+        app:iconGravity="start"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.926"
+        app:rippleColor="#1E88E5" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="112dp"
         android:fontFamily="@font/lato_bold"
         android:text="Please choose your subject"
         android:textColor="@color/text"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.447"
+        app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view" />
 
@@ -92,18 +97,23 @@
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571" />
+        app:layout_constraintVertical_bias="0.498" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/gradient_statusbar"
+        android:background="@color/statusBar"
+        app:itemIconTint="@color/navIcon"
+        app:itemTextColor="@color/navIcon"
+        app:itemIconSize="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navmenu" />
+        app:menu="@menu/bottom_navmenu"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
