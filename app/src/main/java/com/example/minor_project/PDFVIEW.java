@@ -137,10 +137,16 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
     // Implement the onItemClick method from OnItemClickListener interface
     @Override
     public void onItemClick(pdfClass pdfFile) {
-        // Handle item click, e.g., open the PDF
+        // Handle item click, open the PDF with an external PDF viewer
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setType("application/pdf");
-        intent.setData(Uri.parse(pdfFile.getUrl()));
-        startActivity(intent);
+        intent.setDataAndType(Uri.parse(pdfFile.getUrl()), "application/pdf");
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+        try {
+            startActivity(intent);
+        } catch (Exception e) {
+            // Handle the exception, e.g., show a message to install a PDF viewer
+            Toast.makeText(this, "No PDF viewer installed", Toast.LENGTH_SHORT).show();
+        }
     }
 }
