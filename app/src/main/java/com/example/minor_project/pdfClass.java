@@ -1,7 +1,8 @@
 package com.example.minor_project;
 
 public class pdfClass {
-    public String name, url;
+    private String name, url;
+    private boolean isBookmarked;
 
     public pdfClass() {
     }
@@ -15,15 +16,15 @@ public class pdfClass {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getUrl() {
         return url;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public boolean isBookmarked() {
+        return isBookmarked;
+    }
+
+    public void setBookmarked(boolean bookmarked) {
+        isBookmarked = bookmarked;
     }
 }

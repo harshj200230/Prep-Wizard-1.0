@@ -4,9 +4,11 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.minor_project.R;
@@ -45,7 +47,53 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
                 onItemClickListener.onItemClick(pdfFile);
             }
         });
+
+        // Set long-press listener for bookmarking
+        holder.itemView.setOnLongClickListener(view -> {
+            // Show an alert dialog for bookmarking
+            showBookmarkDialog(pdfFile, holder);
+
+            return true;
+        });
+
+        // Set bookmark visibility
+        holder.bookmarkImage.setVisibility(pdfFile.isBookmarked() ? View.VISIBLE : View.GONE);
     }
+
+// ...
+
+    private void showBookmarkDialog(pdfClass pdfFile, MainViewHolder holder) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Bookmark PDF");
+
+        if (pdfFile.isBookmarked()) {
+            builder.setMessage("Remove from bookmarks?");
+            builder.setPositiveButton("Remove", (dialog, which) -> {
+                // Toggle bookmark visibility
+                pdfFile.setBookmarked(!pdfFile.isBookmarked());
+                holder.bookmarkImage.setVisibility(View.GONE);
+
+                // TODO: Update the bookmark status in your database or storage
+                updateBookmarkStatus(pdfFile);
+            });
+        } else {
+            builder.setMessage("Do you want to bookmark this PDF?");
+            builder.setPositiveButton("Bookmark", (dialog, which) -> {
+                // Toggle bookmark visibility
+                pdfFile.setBookmarked(!pdfFile.isBookmarked());
+                holder.bookmarkImage.setVisibility(View.VISIBLE);
+
+                // TODO: Update the bookmark status in your database or storage
+                updateBookmarkStatus(pdfFile);
+            });
+        }
+
+        builder.setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss());
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
 
     @Override
     public int getItemCount() {
@@ -54,15 +102,21 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
 
     public class MainViewHolder extends RecyclerView.ViewHolder {
         TextView txtName;
+        ImageView bookmarkImage;
 
         public MainViewHolder(@NonNull View itemView) {
             super(itemView);
             txtName = itemView.findViewById(R.id.pdfTextName);
+            bookmarkImage = itemView.findViewById(R.id.bookmark);
         }
     }
 
     // Interface to handle item clicks
     public interface OnItemClickListener {
         void onItemClick(pdfClass pdfFile);
+    }
+
+    private void updateBookmarkStatus(pdfClass pdfFile) {
+        // TODO: Update the bookmark status in your database or storage
     }
 }
