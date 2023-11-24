@@ -35,6 +35,7 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
         super.onCreate(savedInstanceState);
         binding = ActivityPdfviewBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+//        BottomNavUtils.setupBottomNavigation(this);
         Intent intent = getIntent();
         if (intent != null) {
             String selectedSubject = intent.getStringExtra("selectedSubject");
@@ -66,6 +67,8 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
                 onBackPressed();
             }
         });
+
+
 
 
     }

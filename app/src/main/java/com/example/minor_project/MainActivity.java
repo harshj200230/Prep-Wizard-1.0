@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter;
 import com.example.minor_project.databinding.ActivityMainBinding;
 import com.example.minor_project.databinding.ActivityPdfviewBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements BottomNavHandler {
 
     private ActivityMainBinding binding;
     @Override
@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        BottomNavUtils.setupBottomNavigation(this);
 
         String[] availabilityOptions1 = {"I", "II","III","IV","V","VI","VII","VIII"};
 
@@ -66,4 +67,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void setupBottomNavigation() {
+
+    }
 }

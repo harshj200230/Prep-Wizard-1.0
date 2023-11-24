@@ -20,6 +20,7 @@ public class Subject extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivitySubjectBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        BottomNavUtils.setupBottomNavigation(this);
 
         // Inside onCreate method in Subject activity
         Intent intent = getIntent();
@@ -71,12 +72,12 @@ public class Subject extends AppCompatActivity {
             }
         });
 
-        binding.goButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Subject.this, PDFVIEW.class);
-                startActivity(intent);
-            }
-        });
+//        binding.goButton2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(Subject.this, PDFVIEW.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 }
