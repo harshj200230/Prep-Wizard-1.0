@@ -9,6 +9,84 @@
     android:orientation="vertical"
     tools:context=".Subject">
 
+    <!-- res/layout/activity_main.xml -->
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:titleTextColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/editTextSearch"
+            android:layout_width="319dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/search_bg"
+            android:hint="Search"
+            android:textColor="@color/white"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.527"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <ImageView
+            android:id="@+id/imageViewSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_search"
+            app:layout_constraintBottom_toBottomOf="@id/editTextSearch"
+            app:layout_constraintEnd_toEndOf="@id/editTextSearch"
+            app:layout_constraintHorizontal_bias="0.935"
+            app:layout_constraintStart_toStartOf="@id/editTextSearch"
+            app:layout_constraintTop_toTopOf="@id/editTextSearch"
+            app:layout_constraintVertical_bias="0.565" />
+
+        <ListView
+            android:id="@+id/myListView"
+            android:layout_width="295dp"
+            android:layout_height="306dp"
+            android:layout_marginStart="62dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="54dp"
+            android:layout_marginBottom="223dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="62dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="61dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/lato_bold"
+            android:text="Please choose your subject"
+            android:textColor="@color/text"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/myListView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextSearch" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
         android:id="@+id/view"
@@ -72,35 +150,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.926"
+        app:layout_constraintVertical_bias="0.776"
         app:rippleColor="#1E88E5" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
-        android:fontFamily="@font/lato_bold"
-        android:text="Please choose your subject"
-        android:textColor="@color/text"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.479"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view" />
-
-    <ListView
-        android:id="@+id/myListView"
-        android:layout_width="301dp"
-        android:layout_height="426dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.536"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
