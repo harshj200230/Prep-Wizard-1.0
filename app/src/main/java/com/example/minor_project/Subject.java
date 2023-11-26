@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.minor_project.databinding.ActivitySubjectBinding;
 import java.util.ArrayList;
@@ -21,6 +22,13 @@ public class Subject extends AppCompatActivity {
         binding = ActivitySubjectBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         BottomNavUtils.setupBottomNavigation(this);
+
+        binding.imageViewSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                performSearch();
+            }
+        });
 
         // Inside onCreate method in Subject activity
         Intent intent = getIntent();
@@ -79,5 +87,23 @@ public class Subject extends AppCompatActivity {
 //                startActivity(intent);
 //            }
 //        });
+    }
+
+    private void performSearch() {
+        String searchText = binding.editTextSearch.getText().toString().trim();
+
+        if (!searchText.isEmpty()) {
+            // Create an intent to start PdfviewActivity
+            Intent intent = new Intent(Subject.this, PDFVIEW.class);
+
+            // Pass the search query to PdfviewActivity
+            intent.putExtra("searchQuery", searchText);
+
+            // Start PdfviewActivity
+            startActivity(intent);
+        } else {
+            // Handle empty search query, show a message, etc.
+            Toast.makeText(Subject.this, "Enter a search query", Toast.LENGTH_SHORT).show();
+        }
     }
 }

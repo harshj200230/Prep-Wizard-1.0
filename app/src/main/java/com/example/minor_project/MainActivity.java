@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import com.example.minor_project.databinding.ActivityMainBinding;
 import com.example.minor_project.databinding.ActivityPdfviewBinding;
@@ -21,6 +22,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavHandler 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         BottomNavUtils.setupBottomNavigation(this);
+        binding.imageViewSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                performSearch();
+            }
+        });
 
         String[] availabilityOptions1 = {"I", "II","III","IV","V","VI","VII","VIII"};
 
@@ -65,6 +72,24 @@ public class MainActivity extends AppCompatActivity implements BottomNavHandler 
 
 
 
+    }
+
+    private void performSearch() {
+        String searchText = binding.editTextSearch.getText().toString().trim();
+
+        if (!searchText.isEmpty()) {
+            // Create an intent to start PdfviewActivity
+            Intent intent = new Intent(MainActivity.this, PDFVIEW.class);
+
+            // Pass the search query to PdfviewActivity
+            intent.putExtra("searchQuery", searchText);
+
+            // Start PdfviewActivity
+            startActivity(intent);
+        } else {
+            // Handle empty search query, show a message, etc.
+            Toast.makeText(MainActivity.this, "Enter a search query", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
