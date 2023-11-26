@@ -42,8 +42,8 @@
     <EditText
         android:id="@+id/passwordEditText"
         style="@style/LoginEditText"
-        android:layout_width="332dp"
-        android:layout_height="45dp"
+        android:layout_width="366dp"
+        android:layout_height="51dp"
         android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
