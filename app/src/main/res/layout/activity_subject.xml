@@ -17,31 +17,19 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="0dp"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:titleTextColor="@android:color/white" />
-
         <EditText
             android:id="@+id/editTextSearch"
             android:layout_width="319dp"
             android:layout_height="48dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="120dp"
             android:background="@drawable/search_bg"
             android:hint="Search"
-            android:textColor="@color/white"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.527"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageViewSearch"
@@ -56,36 +44,14 @@
             app:layout_constraintTop_toTopOf="@id/editTextSearch"
             app:layout_constraintVertical_bias="0.565" />
 
-        <ListView
-            android:id="@+id/myListView"
-            android:layout_width="295dp"
-            android:layout_height="306dp"
-            android:layout_marginStart="62dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="54dp"
-            android:layout_marginBottom="223dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="62dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="61dp"
-            android:layout_marginBottom="8dp"
-            android:fontFamily="@font/lato_bold"
-            android:text="Please choose your subject"
-            android:textColor="@color/text"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/myListView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextSearch" />
-
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.1"
+            android:background="@drawable/bg"
+            tools:layout_editor_absoluteX="-95dp"
+            tools:layout_editor_absoluteY="136dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
@@ -101,17 +67,29 @@
 
     </View>
 
-    <View
-        android:id="@+id/view2"
-        android:layout_width="413dp"
-        android:layout_height="611dp"
-        android:layout_marginTop="1dp"
-        android:alpha="0.1"
-        android:background="@drawable/bg"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="188dp"
+        android:fontFamily="@font/lato_bold"
+        android:text="Please choose your subject"
+        android:textColor="@color/text"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/myListView"
+        android:layout_width="295dp"
+        android:layout_height="306dp"
+        android:layout_marginTop="232dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/backButton"
@@ -137,14 +115,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/statusBar"
+        app:itemIconSize="35dp"
         app:itemIconTint="@color/navIcon"
         app:itemTextColor="@color/navIcon"
-        app:itemIconSize="35dp"
-        app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navmenu"
-        />
+        app:menu="@menu/bottom_navmenu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
