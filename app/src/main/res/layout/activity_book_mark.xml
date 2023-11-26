@@ -16,13 +16,10 @@
         android:padding="8dp">
 
 
-
         <ImageView
             android:id="@+id/pdfImageView1"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
             android:src="@drawable/pdf"
             app:layout_constraintBottom_toTopOf="@+id/pdfTextName1"
             app:layout_constraintEnd_toEndOf="parent"
