@@ -53,6 +53,7 @@
         android:layout_height="wrap_content"
         android:background="@color/statusBar"
         app:itemIconSize="35dp"
+        app:itemPaddingBottom="0.5dp"
         app:itemIconTint="@color/navIcon"
         app:itemTextColor="@color/navIcon"
         app:layout_constraintBottom_toBottomOf="parent"
