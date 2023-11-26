@@ -53,7 +53,7 @@
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:elevation="dp"/>
+        android:elevation="6dp"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/go_button"
