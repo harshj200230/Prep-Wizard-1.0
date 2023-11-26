@@ -41,6 +41,14 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
         setContentView(binding.getRoot());
         BottomNavUtils.setupBottomNavigation(this);
 
+        binding.imageViewSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String searchText = binding.editTextSearch.getText().toString().trim();
+                viewSpecificFilesBySearchQuery(searchText);
+            }
+        });
+
         Intent intent2 = getIntent();
         if (intent2 != null && intent2.hasExtra("searchQuery")) {
             searchQuery = intent2.getStringExtra("searchQuery");
