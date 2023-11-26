@@ -34,28 +34,6 @@ public class login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = LoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
-        gsc = GoogleSignIn.getClient(this,gso);
-
-        binding.googlesigninBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signIn();
-            }
-        });
-
-        binding.loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(login.this, MainActivity.class);
-                startActivity(intent);
-
-            }
-        });
-
-
-
     }
 
     private void signIn() {

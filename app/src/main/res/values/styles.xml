@@ -8,4 +8,20 @@
         <item name="android:shadowDy">4</item>
         <item name="android:shadowRadius">4</item>
     </style>
+    <style name="LoginEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@drawable/edit_text_background</item>
+    </style>
+
+    <style name="LoginButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/login_button_background</item>
+    </style>
+
 </resources>
