@@ -39,36 +39,8 @@
             app:layout_constraintTop_toTopOf="@id/editTextSearch"
             app:layout_constraintVertical_bias="0.565" />
 
-        <View
-            android:id="@+id/view2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:alpha="0.1"
-            android:background="@drawable/bg"
-            tools:layout_editor_absoluteX="-95dp"
-            tools:layout_editor_absoluteY="136dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/go_button"
-        android:layout_width="123dp"
-        android:layout_height="59dp"
-        android:layout_margin="16dp"
-        android:backgroundTint="#DAA520"
-        android:elevation="15dp"
-        android:text="Next"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        app:cornerRadius="8dp"
-        app:iconGravity="start"
-        app:iconTint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/term_spinner"
-        app:layout_constraintVertical_bias="0.556"
-        app:rippleColor="#1E88E5" />
 
     <View
         android:id="@+id/toolbar"
@@ -183,6 +155,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/rep" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/go_button"
+        android:layout_width="123dp"
+        android:layout_height="59dp"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="120dp"
+        android:backgroundTint="#DAA520"
+        android:elevation="15dp"
+        android:text="Next"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:cornerRadius="8dp"
+        app:iconGravity="start"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.849"
+        app:rippleColor="#1E88E5" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
