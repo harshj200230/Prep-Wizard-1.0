@@ -50,14 +50,14 @@
             app:layout_constraintTop_toTopOf="@id/editTextSearch"
             app:layout_constraintVertical_bias="0.565" />
 
-    <View
-        android:id="@+id/view2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0.1"
-        android:background="@drawable/bg"
-        tools:layout_editor_absoluteX="-95dp"
-        tools:layout_editor_absoluteY="136dp" />
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.1"
+            android:background="@drawable/bg"
+            tools:layout_editor_absoluteX="-95dp"
+            tools:layout_editor_absoluteY="136dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -67,6 +67,7 @@
         android:layout_height="59dp"
         android:layout_margin="16dp"
         android:backgroundTint="#DAA520"
+        android:elevation="15dp"
         android:text="Next"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
@@ -77,9 +78,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/term_spinner"
-        app:layout_constraintVertical_bias="0.166"
-        app:rippleColor="#1E88E5"
-        android:elevation="15dp"/>
+        app:layout_constraintVertical_bias="0.556"
+        app:rippleColor="#1E88E5" />
 
     <View
         android:id="@+id/toolbar"
@@ -94,15 +94,18 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="288dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="166dp"
+        android:layout_marginEnd="265dp"
         android:fontFamily="@font/lato_bold"
         android:text="@string/Semester"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/semester_spinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
         android:id="@+id/semester_spinner"
@@ -111,14 +114,14 @@
         android:layout_weight="1"
         android:background="@drawable/rounded_border_spinner_with_arrow"
         android:contentDescription="@string/term"
+        android:elevation="15dp"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.468"
-        android:elevation="15dp"/>
+        app:layout_constraintVertical_bias="0.396" />
 
     <TextView
         android:id="@+id/textView3"
@@ -130,7 +133,7 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/term_spinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:layout_constraintVertical_bias="1.0" />
@@ -142,14 +145,43 @@
         android:layout_weight="1"
         android:background="@drawable/rounded_border_spinner_with_arrow"
         android:contentDescription="@string/Semester"
+        android:elevation="15dp"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.665"
-        android:elevation="15dp"/>
+        app:layout_constraintVertical_bias="0.541" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/lato_bold"
+        android:text="Branch"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.131"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/term_spinner" />
+
+    <Spinner
+        android:id="@+id/branch_spinner"
+        android:layout_width="322dp"
+        android:layout_height="52dp"
+        android:layout_weight="1"
+        android:background="@drawable/rounded_border_spinner_with_arrow"
+        android:contentDescription="@string/term"
+        android:elevation="15dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.69" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
@@ -165,21 +197,7 @@
         app:menu="@menu/bottom_navmenu"
         />
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="244dp"
-            android:fontFamily="@font/inter_semibold"
-            android:text="Please Select your"
-            android:textColor="@color/text"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.223"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
+    <ImageView
         android:id="@+id/imageView2"
         android:layout_width="407dp"
         android:layout_height="68dp"
