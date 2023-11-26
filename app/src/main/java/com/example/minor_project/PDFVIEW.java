@@ -46,6 +46,8 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
             public void onClick(View v) {
                 String searchText = binding.editTextSearch.getText().toString().trim();
                 viewSpecificFilesBySearchQuery(searchText);
+                binding.editTextSearch.setText( searchText);
+
             }
         });
 
@@ -53,6 +55,7 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
         if (intent2 != null && intent2.hasExtra("searchQuery")) {
             searchQuery = intent2.getStringExtra("searchQuery");
             viewSpecificFilesBySearchQuery(searchQuery);
+            binding.editTextSearch.setText( searchQuery);
             searchavailable =true;
         }
 
