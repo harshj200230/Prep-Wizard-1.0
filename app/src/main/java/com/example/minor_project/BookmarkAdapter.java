@@ -2,6 +2,8 @@ package com.example.minor_project;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,18 +14,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.minor_project.R;
-import com.example.minor_project.pdfClass;
-
 import java.util.List;
 
-public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder> {
+public class BookmarkAdapter extends RecyclerView.Adapter<BookmarkAdapter.BookmarkViewHolder> {
 
     private Context context;
     private List<pdfClass> pdfFiles;
     private OnItemClickListener onItemClickListener;
 
-    public MainAdapter(Context context, List<pdfClass> pdfFiles, OnItemClickListener onItemClickListener) {
+    public BookmarkAdapter(Context context, List<pdfClass> pdfFiles, OnItemClickListener onItemClickListener) {
         this.context = context;
         this.pdfFiles = pdfFiles;
         this.onItemClickListener = onItemClickListener;
@@ -31,13 +30,13 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
 
     @NonNull
     @Override
-    public MainViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BookmarkViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.rv_item, parent, false);
-        return new MainViewHolder(view);
+        return new BookmarkViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MainViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull BookmarkViewHolder holder, int position) {
         pdfClass pdfFile = pdfFiles.get(position);
         holder.txtName.setText(pdfFile.getName());
         holder.txtName.setSelected(true);
@@ -61,9 +60,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
         holder.bookmarkImage.setVisibility(pdfFile.isBookmarked() ? View.VISIBLE : View.GONE);
     }
 
-// ...
-
-    private void showBookmarkDialog(pdfClass pdfFile, MainViewHolder holder) {
+    private void showBookmarkDialog(pdfClass pdfFile, BookmarkViewHolder holder) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Bookmark PDF");
 
@@ -95,17 +92,16 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
         alertDialog.show();
     }
 
-
     @Override
     public int getItemCount() {
         return pdfFiles.size();
     }
 
-    public class MainViewHolder extends RecyclerView.ViewHolder {
+    public static class BookmarkViewHolder extends RecyclerView.ViewHolder {
         TextView txtName;
         ImageView bookmarkImage;
 
-        public MainViewHolder(@NonNull View itemView) {
+        public BookmarkViewHolder(@NonNull View itemView) {
             super(itemView);
             txtName = itemView.findViewById(R.id.pdfTextName);
             bookmarkImage = itemView.findViewById(R.id.bookmark);
@@ -118,17 +114,23 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
     }
 
     private void updateBookmarkStatus(pdfClass pdfFile) {
-        // Update the bookmark status and URL in SharedPreferences
+        // Update the bookmark status in SharedPreferences
         SharedPreferences preferences = context.getSharedPreferences("BookmarkPrefs", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
+        preferences.edit().putBoolean(pdfFile.getName(), pdfFile.isBookmarked()).apply();
 
-        // Store the bookmark status
-        editor.putBoolean(pdfFile.getName(), pdfFile.isBookmarked());
-
-        // Store the URL
-        editor.putString(pdfFile.getName() + "_url", pdfFile.getUrl());
-
-        editor.apply();
+        if (!pdfFile.isBookmarked()) {
+            int position = pdfFiles.indexOf(pdfFile);
+            if (position != -1) {
+                pdfFiles.remove(position);
+                if (Looper.myLooper() == Looper.getMainLooper()) {
+                    notifyItemRemoved(position);
+                } else {
+                    // If not on the main thread, post to the main thread for UI updates
+                    Handler handler = new Handler(Looper.getMainLooper());
+                    handler.post(() -> notifyItemRemoved(position));
+                }
+            }
+        }
     }
-
 }
+

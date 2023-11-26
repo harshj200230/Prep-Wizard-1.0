@@ -29,6 +29,6 @@ public class BottomNavUtils {
 
     private static void navigateToActivity(Activity activity, Class<?> targetActivityClass) {
         activity.startActivity(new Intent(activity, targetActivityClass));
-        activity.finish();
+
     }
 }

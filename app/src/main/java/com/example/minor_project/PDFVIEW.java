@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -110,6 +112,11 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
                 for (DataSnapshot postSnapshot : snapshot.getChildren()) {
                     pdfClass pdfClass = postSnapshot.getValue(pdfClass.class);
                     if (pdfClass != null && pdfClass.getName().startsWith(subject + "_" + term)) {
+
+                        boolean isBookmarked = loadBookmarkStatus(pdfClass);
+
+                        // Set the loaded bookmark status to the pdfClass object
+                        pdfClass.setBookmarked(isBookmarked);
                         uploads.add(pdfClass);
                     }
                 }
@@ -123,6 +130,12 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
                 // Handle onCancelled
             }
         });
+    }
+
+    private boolean loadBookmarkStatus(pdfClass pdfFile) {
+        SharedPreferences preferences = getSharedPreferences("BookmarkPrefs", Context.MODE_PRIVATE);
+        // Load bookmark status from SharedPreferences
+        return preferences.getBoolean(pdfFile.getName(), false);
     }
 
 
