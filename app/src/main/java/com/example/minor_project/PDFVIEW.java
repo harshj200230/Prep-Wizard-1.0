@@ -170,7 +170,6 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
                 for (DataSnapshot postSnapshot : snapshot.getChildren()) {
                     pdfClass pdfClass = postSnapshot.getValue(pdfClass.class);
                     if (pdfClass != null && pdfClass.getName().toLowerCase().contains(queryLowerCase)) {
-                        Toast.makeText(PDFVIEW.this, "searchquerijjj" + searchQuery, Toast.LENGTH_SHORT).show();
 
                         boolean isBookmarked = loadBookmarkStatus(pdfClass);
 
