@@ -25,10 +25,10 @@
             android:background="@drawable/search_bg"
             android:hint="Search"
             android:inputType="textCapSentences"
-            android:textColorHint="@color/bg"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:textColor="@color/white"
+            android:textColorHint="@color/bg"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -55,6 +55,7 @@
         android:background="@color/statusBar"
 
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -67,7 +68,7 @@
         android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.042"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/view"
         app:layout_constraintVertical_bias="0.484"
@@ -98,5 +99,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_navmenu" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="160dp"
+        android:fontFamily="@font/lato"
+        android:text="Question Papers"
+        android:textColor="@color/bg"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/backButton2"
+        app:layout_constraintTop_toTopOf="@+id/view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
