@@ -65,7 +65,7 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
                 String selectedSubject = intent.getStringExtra("selectedSubject");
                 String selectedTerm = intent.getStringExtra("selectedTerm");
             viewSpecificFiles(selectedSubject,selectedTerm);
-                Toast.makeText(this, "" + selectedSubject, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "" + selectedSubject, Toast.LENGTH_SHORT).show();
                 // Now you have the selected subject and term values.
                 // You can use them as needed in your activity.
             }
