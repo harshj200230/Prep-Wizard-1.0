@@ -49,6 +49,16 @@ public class MainActivity extends AppCompatActivity implements BottomNavHandler 
 
         binding.termSpinner.setAdapter(availabilityAdapter2);
 
+        String[] availabilityOptions3 = {"CSE", "IT","ECE","BIO-TECH"};
+
+        ArrayAdapter<String> availabilityAdapter3 = new ArrayAdapter<>(
+                this,
+                R.layout.custom_spinner_dropdown_item,
+                availabilityOptions3
+        );
+
+        binding.branchSpinner.setAdapter(availabilityAdapter3);
+
         binding.goButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
