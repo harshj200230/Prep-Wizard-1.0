@@ -10,6 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         tools:context=".MainActivity">
 
         <EditText
@@ -20,10 +21,10 @@
             android:background="@drawable/search_bg"
             android:hint="Search"
             android:inputType="textCapSentences"
-            android:textColorHint="@color/bg"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:textColor="@color/white"
+            android:textColorHint="@color/bg"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
