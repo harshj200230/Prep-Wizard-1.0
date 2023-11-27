@@ -158,6 +158,9 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
     private void viewSpecificFilesBySearchQuery(String searchQuery) {
         Toast.makeText(this, "Getting your files please wait 😊", Toast.LENGTH_SHORT).show();
 
+        // Convert the search query to lowercase (or uppercase)
+        final String queryLowerCase = searchQuery.toLowerCase();
+
         databaseReference = FirebaseDatabase.getInstance().getReference("Uploads");
         databaseReference.orderByChild("name").addValueEventListener(new ValueEventListener() {
             @Override
@@ -166,8 +169,8 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
 
                 for (DataSnapshot postSnapshot : snapshot.getChildren()) {
                     pdfClass pdfClass = postSnapshot.getValue(pdfClass.class);
-                    if (pdfClass != null && pdfClass.getName().contains(searchQuery)) {
-                        Toast.makeText(PDFVIEW.this, "searchquerijjj"+searchQuery, Toast.LENGTH_SHORT).show();
+                    if (pdfClass != null && pdfClass.getName().toLowerCase().contains(queryLowerCase)) {
+                        Toast.makeText(PDFVIEW.this, "searchquerijjj" + searchQuery, Toast.LENGTH_SHORT).show();
 
                         boolean isBookmarked = loadBookmarkStatus(pdfClass);
 
@@ -187,6 +190,7 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
             }
         });
     }
+
 
     private boolean loadBookmarkStatus(pdfClass pdfFile) {
         SharedPreferences preferences = getSharedPreferences("BookmarkPrefs", Context.MODE_PRIVATE);
