@@ -9,9 +9,9 @@
 
     <View
         android:id="@+id/toolbar"
-        android:layout_width="413dp"
-        android:layout_height="76dp"
-        android:background="@color/statusBar"
+        android:layout_width="432dp"
+        android:layout_height="78dp"
+        android:background="@drawable/headerx"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
