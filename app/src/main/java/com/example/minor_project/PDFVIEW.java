@@ -2,18 +2,21 @@ package com.example.minor_project;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
 import com.example.minor_project.databinding.ActivityPdfviewBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -39,6 +42,15 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
         super.onCreate(savedInstanceState);
         binding = ActivityPdfviewBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        int selectedIconColor = ContextCompat.getColor(this, R.color.purple_200);
+
+// Create a ColorStateList from the XML resource
+        ColorStateList colorStateList = ContextCompat.getColorStateList(this, R.color.bottom_nav_icon_color);
+
+// Set the ColorStateList to the BottomNavigationView
+        bottomNavigationView.setItemIconTintList(colorStateList);
+        bottomNavigationView.setItemTextColor(colorStateList);
         BottomNavUtils.setupBottomNavigation(this);
 
         binding.imageViewSearch.setOnClickListener(new View.OnClickListener() {

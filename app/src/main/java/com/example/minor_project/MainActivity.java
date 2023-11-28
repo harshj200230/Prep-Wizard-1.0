@@ -2,15 +2,24 @@ package com.example.minor_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.example.minor_project.databinding.ActivityMainBinding;
 import com.example.minor_project.databinding.ActivityPdfviewBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements BottomNavHandler {
 
@@ -18,9 +27,25 @@ public class MainActivity extends AppCompatActivity implements BottomNavHandler 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        int selectedIconColor = ContextCompat.getColor(this, R.color.purple_200);
+
+// Create a ColorStateList from the XML resource
+        ColorStateList colorStateList = ContextCompat.getColorStateList(this, R.color.bottom_nav_icon_color);
+
+// Set the ColorStateList to the BottomNavigationView
+        bottomNavigationView.setItemIconTintList(colorStateList);
+        bottomNavigationView.setItemTextColor(colorStateList);
+
+
+
+
+
+
         BottomNavUtils.setupBottomNavigation(this);
         binding.imageViewSearch.setOnClickListener(new View.OnClickListener() {
             @Override

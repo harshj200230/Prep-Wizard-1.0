@@ -1,11 +1,13 @@
 package com.example.minor_project;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +15,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.minor_project.databinding.ActivityBookMarkViewBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +32,15 @@ public class bookMarkView extends AppCompatActivity implements BookmarkAdapter.O
         super.onCreate(savedInstanceState);
         binding = ActivityBookMarkViewBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        int selectedIconColor = ContextCompat.getColor(this, R.color.purple_200);
+
+// Create a ColorStateList from the XML resource
+        ColorStateList colorStateList = ContextCompat.getColorStateList(this, R.color.bottom_nav_icon_color_bookmark);
+
+// Set the ColorStateList to the BottomNavigationView
+        bottomNavigationView.setItemIconTintList(colorStateList);
+        bottomNavigationView.setItemTextColor(colorStateList);
         BottomNavUtils.setupBottomNavigation(this);
 
         binding.backbtn.setOnClickListener(new View.OnClickListener() {
