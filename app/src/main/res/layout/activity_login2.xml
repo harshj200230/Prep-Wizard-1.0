@@ -10,9 +10,9 @@
 
     <View
         android:id="@+id/toolbar"
-        android:layout_width="432dp"
+        android:layout_width="match_parent"
         android:layout_height="78dp"
-        android:background="@drawable/headerx"
+        android:background="@drawable/headers"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
