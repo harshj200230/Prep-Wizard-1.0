@@ -103,6 +103,25 @@ public class Subject extends AppCompatActivity {
 //        });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateBottomNavIconColor();
+    }
+
+    private void updateBottomNavIconColor() {
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        int selectedIconColor = ContextCompat.getColor(this, R.color.purple_200);
+
+        // Create a ColorStateList from the XML resource
+        ColorStateList colorStateList = ContextCompat.getColorStateList(this, R.color.bottom_nav_icon_color);
+
+        // Set the ColorStateList to the BottomNavigationView
+        bottomNavigationView.setItemIconTintList(colorStateList);
+        bottomNavigationView.setItemTextColor(colorStateList);
+    }
+
+
     private void performSearch() {
         String searchText = binding.editTextSearch.getText().toString().trim();
 
@@ -115,6 +134,7 @@ public class Subject extends AppCompatActivity {
 
             // Start PdfviewActivity
             startActivity(intent);
+
         } else {
             // Handle empty search query, show a message, etc.
             Toast.makeText(Subject.this, "Enter a search query", Toast.LENGTH_SHORT).show();
