@@ -55,9 +55,9 @@ public class Subject extends AppCompatActivity {
 
         ListView myListView = binding.myListView;
         ArrayList<String> subjects = new ArrayList<>();
-        subjects.add("Maths I");
+        subjects.add("maths");
         subjects.add("Physics I");
-        subjects.add("SDF II");
+        subjects.add("sdf");
         subjects.add("literature");
         subjects.add("bigdata");
 

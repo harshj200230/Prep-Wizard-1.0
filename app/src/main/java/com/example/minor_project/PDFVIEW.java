@@ -158,6 +158,9 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
 
                 // Notify the adapter that the data has changed
                 adapter.notifyDataSetChanged();
+                if (uploads.isEmpty()) {
+                    Toast.makeText(PDFVIEW.this, "No results found", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
