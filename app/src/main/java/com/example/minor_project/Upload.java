@@ -43,6 +43,13 @@ public class Upload extends AppCompatActivity {
             }
         });
 
+        binding.backButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
 
 
         // Database
