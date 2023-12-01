@@ -90,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavHandler 
                 // Get selected values from spinners
                 String selectedSemester = binding.semesterSpinner.getSelectedItem().toString();
                 String selectedTerm = binding.termSpinner.getSelectedItem().toString();
+                String selectedBranch = binding.branchSpinner.getSelectedItem().toString();
 
                 // Create an intent to start the Subject activity
                 Intent intent = new Intent(MainActivity.this, Subject.class);
@@ -97,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavHandler 
                 // Pass the selected values to the Subject activity
                 intent.putExtra("selectedSemester", selectedSemester);
                 intent.putExtra("selectedTerm", selectedTerm);
+                intent.putExtra("selectedBranch", selectedBranch);
 
                 // Start the Subject activity
                 startActivity(intent);
