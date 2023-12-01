@@ -139,16 +139,28 @@ public class Subject extends AppCompatActivity {
             subjects.add("Engineering Materials and Technology");
             // Add more subjects as needed
         }else if (semester.equals("VI") && branch.equals("CSE")) {
-            subjects.add("Subject3");
-            subjects.add("Subject4");
+            subjects.add("SOFTWARE DEVELOPMENT FUNDAMENTALS-1");
+            subjects.add("ENGLISH");
+            subjects.add("MATHEMATICS-1");
+            subjects.add("PHYSICS-1");
+            subjects.add("ENGINEERING DRAWING & DESIGN");
+            subjects.add("BRIDGE COURSE-1");
             // Add more subjects as needed
         }else if (semester.equals("VII") && branch.equals("CSE")) {
-            subjects.add("Subject3");
-            subjects.add("Subject4");
+            subjects.add("SOFTWARE DEVELOPMENT FUNDAMENTALS-1");
+            subjects.add("ENGLISH");
+            subjects.add("MATHEMATICS-1");
+            subjects.add("PHYSICS-1");
+            subjects.add("ENGINEERING DRAWING & DESIGN");
+            subjects.add("BRIDGE COURSE-1");
             // Add more subjects as needed
         }else if (semester.equals("VIII") && branch.equals("CSE")) {
-            subjects.add("Subject3");
-            subjects.add("Subject4");
+            subjects.add("SOFTWARE DEVELOPMENT FUNDAMENTALS-1");
+            subjects.add("ENGLISH");
+            subjects.add("MATHEMATICS-1");
+            subjects.add("PHYSICS-1");
+            subjects.add("ENGINEERING DRAWING & DESIGN");
+            subjects.add("BRIDGE COURSE-1");
             // Add more subjects as needed
         }
 
@@ -189,16 +201,28 @@ public class Subject extends AppCompatActivity {
             subjects.add("ELECTROMAGNETIC FIELD THEORY");
             // Add more subjects as needed
         }else if (semester.equals("VI") && branch.equals("ECE")) {
-            subjects.add("Subject3");
-            subjects.add("Subject4");
+            subjects.add("SOFTWARE DEVELOPMENT FUNDAMENTALS-1");
+            subjects.add("ENGLISH");
+            subjects.add("MATHEMATICS-1");
+            subjects.add("PHYSICS-1");
+            subjects.add("ENGINEERING DRAWING & DESIGN");
+            subjects.add("BRIDGE COURSE-1");
             // Add more subjects as needed
         }else if (semester.equals("VII") && branch.equals("ECE")) {
-            subjects.add("Subject3");
-            subjects.add("Subject4");
+            subjects.add("SOFTWARE DEVELOPMENT FUNDAMENTALS-1");
+            subjects.add("ENGLISH");
+            subjects.add("MATHEMATICS-1");
+            subjects.add("PHYSICS-1");
+            subjects.add("ENGINEERING DRAWING & DESIGN");
+            subjects.add("BRIDGE COURSE-1");
             // Add more subjects as needed
         }else if (semester.equals("VIII") && branch.equals("ECE")) {
-            subjects.add("Subject3");
-            subjects.add("Subject4");
+            subjects.add("SOFTWARE DEVELOPMENT FUNDAMENTALS-1");
+            subjects.add("ENGLISH");
+            subjects.add("MATHEMATICS-1");
+            subjects.add("PHYSICS-1");
+            subjects.add("ENGINEERING DRAWING & DESIGN");
+            subjects.add("BRIDGE COURSE-1");
             // Add more subjects as needed
         }
 
@@ -219,28 +243,48 @@ public class Subject extends AppCompatActivity {
             subjects.add("LIFE SKILLS AND EFFECTIVE COMMUNICATION");
             // Add more subjects as needed
         }else if (semester.equals("III") && branch.equals("IT")) {
-            subjects.add("Subject3");
-            subjects.add("Subject4");
+            subjects.add("THEORETICAL FOUNDATIONS OF COMPUTER SCIENCE");
+            subjects.add("DATA STRUCTURES");
+            subjects.add("DATABASE SYSTEMS AND WEB");
+            subjects.add("ELECTRICAL SCIENCE-2");
+            subjects.add("ECONOMICS");
             // Add more subjects as needed
         }else if (semester.equals("IV") && branch.equals("IT")) {
-            subjects.add("Subject3");
-            subjects.add("Subject4");
+            subjects.add("ALGORITHMS AND PROBLEM SOLVING");
+            subjects.add("PROBABILITY AND RANDOM PROCESSES");
+            subjects.add("INTRODUCTION TO LITERATURE");
+            subjects.add("DIGITAL SYSTEMS");
             // Add more subjects as needed
         }else if (semester.equals("V") && branch.equals("IT")) {
-            subjects.add("Subject3");
-            subjects.add("Subject4");
+            subjects.add("COMPUTER ORGANISATION AND ARCHITECTURE");
+            subjects.add("OPERATING SYSTEMS AND SYSTEMS PROGRAMMING");
+            subjects.add("INTRODUCTION TO CONTEMPORARY FORM OF LITERATURE");
+            subjects.add("INTRODUCTION TO BIG DATA AND DATA ANALYTICS");
+            subjects.add("Engineering Materials and Technology");
             // Add more subjects as needed
         }else if (semester.equals("VI") && branch.equals("IT")) {
-            subjects.add("Subject3");
-            subjects.add("Subject4");
+            subjects.add("SOFTWARE DEVELOPMENT FUNDAMENTALS-1");
+            subjects.add("ENGLISH");
+            subjects.add("MATHEMATICS-1");
+            subjects.add("PHYSICS-1");
+            subjects.add("ENGINEERING DRAWING & DESIGN");
+            subjects.add("BRIDGE COURSE-1");
             // Add more subjects as needed
         }else if (semester.equals("VII") && branch.equals("IT")) {
-            subjects.add("Subject3");
-            subjects.add("Subject4");
+            subjects.add("SOFTWARE DEVELOPMENT FUNDAMENTALS-1");
+            subjects.add("ENGLISH");
+            subjects.add("MATHEMATICS-1");
+            subjects.add("PHYSICS-1");
+            subjects.add("ENGINEERING DRAWING & DESIGN");
+            subjects.add("BRIDGE COURSE-1");
             // Add more subjects as needed
         }else if (semester.equals("VIII") && branch.equals("IT")) {
-            subjects.add("Subject3");
-            subjects.add("Subject4");
+            subjects.add("SOFTWARE DEVELOPMENT FUNDAMENTALS-1");
+            subjects.add("ENGLISH");
+            subjects.add("MATHEMATICS-1");
+            subjects.add("PHYSICS-1");
+            subjects.add("ENGINEERING DRAWING & DESIGN");
+            subjects.add("BRIDGE COURSE-1");
             // Add more subjects as needed
         }
 
@@ -261,28 +305,52 @@ public class Subject extends AppCompatActivity {
             subjects.add("LIFE SKILLS AND EFFECTIVE COMMUNICATION");
             // Add more subjects as needed
         }else if (semester.equals("III") && branch.equals("BIO-TECH")) {
-            subjects.add("Subject3");
-            subjects.add("Subject4");
+            subjects.add("SOFTWARE DEVELOPMENT FUNDAMENTALS-1");
+            subjects.add("ENGLISH");
+            subjects.add("MATHEMATICS-1");
+            subjects.add("PHYSICS-1");
+            subjects.add("ENGINEERING DRAWING & DESIGN");
+            subjects.add("BRIDGE COURSE-1");
             // Add more subjects as needed
         }else if (semester.equals("IV") && branch.equals("BIO-TECH")) {
-            subjects.add("Subject3");
-            subjects.add("Subject4");
+            subjects.add("SOFTWARE DEVELOPMENT FUNDAMENTALS-1");
+            subjects.add("ENGLISH");
+            subjects.add("MATHEMATICS-1");
+            subjects.add("PHYSICS-1");
+            subjects.add("ENGINEERING DRAWING & DESIGN");
+            subjects.add("BRIDGE COURSE-1");
             // Add more subjects as needed
         }else if (semester.equals("V") && branch.equals("BIO-TECH")) {
-            subjects.add("Subject3");
-            subjects.add("Subject4");
+            subjects.add("SOFTWARE DEVELOPMENT FUNDAMENTALS-1");
+            subjects.add("ENGLISH");
+            subjects.add("MATHEMATICS-1");
+            subjects.add("PHYSICS-1");
+            subjects.add("ENGINEERING DRAWING & DESIGN");
+            subjects.add("BRIDGE COURSE-1");
             // Add more subjects as needed
         }else if (semester.equals("VI") && branch.equals("BIO-TECH")) {
-            subjects.add("Subject3");
-            subjects.add("Subject4");
+            subjects.add("SOFTWARE DEVELOPMENT FUNDAMENTALS-1");
+            subjects.add("ENGLISH");
+            subjects.add("MATHEMATICS-1");
+            subjects.add("PHYSICS-1");
+            subjects.add("ENGINEERING DRAWING & DESIGN");
+            subjects.add("BRIDGE COURSE-1");
             // Add more subjects as needed
         }else if (semester.equals("VII") && branch.equals("BIO-TECH")) {
-            subjects.add("Subject3");
-            subjects.add("Subject4");
+            subjects.add("SOFTWARE DEVELOPMENT FUNDAMENTALS-1");
+            subjects.add("ENGLISH");
+            subjects.add("MATHEMATICS-1");
+            subjects.add("PHYSICS-1");
+            subjects.add("ENGINEERING DRAWING & DESIGN");
+            subjects.add("BRIDGE COURSE-1");
             // Add more subjects as needed
         }else if (semester.equals("VIII") && branch.equals("BIO-TECH")) {
-            subjects.add("Subject3");
-            subjects.add("Subject4");
+            subjects.add("SOFTWARE DEVELOPMENT FUNDAMENTALS-1");
+            subjects.add("ENGLISH");
+            subjects.add("MATHEMATICS-1");
+            subjects.add("PHYSICS-1");
+            subjects.add("ENGINEERING DRAWING & DESIGN");
+            subjects.add("BRIDGE COURSE-1");
             // Add more subjects as needed
         }
         // Add more conditions for other semesters and terms
