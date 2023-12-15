@@ -26,7 +26,7 @@ public class login2 extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     if(binding.usernameEditText.getText().toString().equals(userName) && binding.passwordEditText.getText().toString().equals(password)) {
-                        Intent intent = new Intent(login2.this, Upload.class);
+                        Intent intent = new Intent(login2.this, Admin_main.class);
                         startActivity(intent);
                         Toast.makeText(login2.this, "Logged-in Successfully", Toast.LENGTH_SHORT).show();
                     }

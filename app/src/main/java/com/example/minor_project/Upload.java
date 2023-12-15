@@ -34,6 +34,10 @@ public class Upload extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityUploadBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        Intent intent = getIntent();
+
+        String selectedSubject = intent.getStringExtra("selectedSubject");
+        String selectedTerm = intent.getStringExtra("selectedTerm");
 
         binding.check.setOnClickListener(new View.OnClickListener() {
             @Override

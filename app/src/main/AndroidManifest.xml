@@ -18,6 +18,20 @@
         android:theme="@style/Theme.Minor_Project"
         tools:targetApi="31">
         <activity
+            android:name=".Admin_Subject"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Admin_main"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".login2"
             android:exported="true">
             <meta-data
@@ -26,13 +40,15 @@
         </activity>
         <activity
             android:name=".user"
-            android:exported="true"
             android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -85,8 +101,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

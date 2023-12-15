@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_statusbar"
+    tools:context=".Admin_main">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Admin_main">
+
+        <EditText
+            android:id="@+id/editTextSearch"
+            android:layout_width="319dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/search_bg"
+            android:visibility="gone"
+            android:hint="Search"
+            android:inputType="textCapSentences"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageViewSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_search"
+            app:layout_constraintBottom_toBottomOf="@id/editTextSearch"
+            app:layout_constraintEnd_toEndOf="@id/editTextSearch"
+            app:layout_constraintHorizontal_bias="0.935"
+            app:layout_constraintStart_toStartOf="@id/editTextSearch"
+            app:layout_constraintTop_toTopOf="@id/editTextSearch"
+            app:layout_constraintVertical_bias="0.565" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <View
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:background="@drawable/headers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="166dp"
+        android:layout_marginEnd="265dp"
+        android:fontFamily="@font/lato_bold"
+        android:text="@string/Semester"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/semester_spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Spinner
+        android:id="@+id/semester_spinner"
+        android:layout_width="322dp"
+        android:layout_height="52dp"
+        android:layout_weight="1"
+        android:background="@drawable/rounded_border_spinner_with_arrow"
+        android:contentDescription="@string/term"
+        android:elevation="15dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.396" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="264dp"
+        android:fontFamily="@font/lato_bold"
+        android:text="@string/term"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/term_spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Spinner
+        android:id="@+id/term_spinner"
+        android:layout_width="322dp"
+        android:layout_height="52dp"
+        android:layout_weight="1"
+        android:background="@drawable/rounded_border_spinner_with_arrow"
+        android:contentDescription="@string/Semester"
+        android:elevation="15dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.541" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/lato_bold"
+        android:text="Branch"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/branch_spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.131"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/term_spinner" />
+
+    <Spinner
+        android:id="@+id/branch_spinner"
+        android:layout_width="322dp"
+        android:layout_height="52dp"
+        android:layout_weight="1"
+        android:background="@drawable/rounded_border_spinner_with_arrow"
+        android:contentDescription="@string/term"
+        android:elevation="15dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.69" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="407dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.431"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/rep" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/go_button"
+        android:layout_width="123dp"
+        android:layout_height="59dp"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="120dp"
+        android:backgroundTint="#DAA520"
+        android:elevation="15dp"
+        android:text="Next"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:cornerRadius="8dp"
+        app:iconGravity="start"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.849"
+        app:rippleColor="#1E88E5" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/statusBar"
+        app:itemIconSize="35dp"
+        app:itemPaddingBottom="0.5dp"
+        app:itemIconTint="@color/navIcon"
+        app:itemTextColor="@color/navIcon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navmenu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
