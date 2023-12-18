@@ -28,6 +28,7 @@ public class Upload extends AppCompatActivity {
 
     StorageReference storageReference;
     DatabaseReference databaseReference;
+    String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,9 @@ public class Upload extends AppCompatActivity {
 
         String selectedSubject = intent.getStringExtra("selectedSubject");
         String selectedTerm = intent.getStringExtra("selectedTerm");
-
+        String selectedYear = intent.getStringExtra("selectedYear");
+        name = selectedSubject+"_"+selectedTerm+"_"+selectedYear;
+        Toast.makeText(this, "Name is : "+ name, Toast.LENGTH_SHORT).show();
         binding.check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,8 +92,7 @@ public class Upload extends AppCompatActivity {
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Uploading...");
         progressDialog.show();
-
-        StorageReference reference = storageReference.child("Uploads/"+binding.pdfName.getText().toString()+".pdf");
+        StorageReference reference = storageReference.child("Uploads/"+name+".pdf");
         reference.putFile(data)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
@@ -100,7 +102,7 @@ public class Upload extends AppCompatActivity {
                         while(!uriTask.isComplete());
                         Uri url = uriTask.getResult();
 
-                        pdfClass pdfClass = new pdfClass(binding.pdfName.getText().toString(),url.toString());
+                        pdfClass pdfClass = new pdfClass(name,url.toString());
                         databaseReference.child(databaseReference.push().getKey()).setValue(pdfClass);
 
                         Toast.makeText(Upload.this, "File Uploaded!!", Toast.LENGTH_SHORT).show();

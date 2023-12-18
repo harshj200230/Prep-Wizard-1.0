@@ -9,8 +9,6 @@
     android:orientation="vertical"
     tools:context=".Admin_Subject">
 
-    <!-- res/layout/activity_main.xml -->
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

@@ -50,6 +50,16 @@ public class Admin_main extends AppCompatActivity {
 
         binding.branchSpinner.setAdapter(availabilityAdapter3);
 
+        String[] availabilityOptions4 = {"2023", "2022","2021","2020"};
+
+        ArrayAdapter<String> availabilityAdapter4 = new ArrayAdapter<>(
+                this,
+                R.layout.custom_spinner_dropdown_item,
+                availabilityOptions4
+        );
+
+        binding.yearSpinner.setAdapter(availabilityAdapter4);
+
         binding.goButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,14 +67,16 @@ public class Admin_main extends AppCompatActivity {
                 String selectedSemester = binding.semesterSpinner.getSelectedItem().toString();
                 String selectedTerm = binding.termSpinner.getSelectedItem().toString();
                 String selectedBranch = binding.branchSpinner.getSelectedItem().toString();
+                String selectedyear = binding.yearSpinner.getSelectedItem().toString();
 
                 // Create an intent to start the Subject activity
-                Intent intent = new Intent(Admin_main.this, Subject.class);
+                Intent intent = new Intent(Admin_main.this, Admin_Subject.class);
 
                 // Pass the selected values to the Subject activity
                 intent.putExtra("selectedSemester", selectedSemester);
                 intent.putExtra("selectedTerm", selectedTerm);
                 intent.putExtra("selectedBranch", selectedBranch);
+                intent.putExtra("selectedYear", selectedyear);
 
                 // Start the Subject activity
                 startActivity(intent);

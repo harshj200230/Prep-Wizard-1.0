@@ -70,6 +70,7 @@
         android:fontFamily="@font/inter_semibold"
         android:hint="Enter PDF Name"
         android:inputType="textPersonName"
+        android:visibility="gone"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

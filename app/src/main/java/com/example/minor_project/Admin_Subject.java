@@ -49,6 +49,7 @@ public class Admin_Subject extends AppCompatActivity {
                 // Get the selected term from the intent
                 Intent receivedIntent = getIntent();
                 String selectedTerm = receivedIntent.getStringExtra("selectedTerm");
+                String selectedyear = receivedIntent.getStringExtra("selectedYear");
 
                 // Create an intent to start the PDFVIEW activity
                 Intent intent = new Intent(Admin_Subject.this, Upload.class);
@@ -56,6 +57,7 @@ public class Admin_Subject extends AppCompatActivity {
                 // Pass data to the PDFVIEW activity
                 intent.putExtra("selectedSubject", selectedSubject);
                 intent.putExtra("selectedTerm", selectedTerm);
+                intent.putExtra("selectedYear", selectedyear);
 
                 // Start the PDFVIEW activity
                 startActivity(intent);
