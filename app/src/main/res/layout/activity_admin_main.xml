@@ -10,6 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         tools:context=".Admin_main">
 
         <EditText
@@ -18,13 +19,13 @@
             android:layout_height="48dp"
             android:layout_marginTop="120dp"
             android:background="@drawable/search_bg"
-            android:visibility="gone"
             android:hint="Search"
             android:inputType="textCapSentences"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:textColor="@color/white"
             android:textColorHint="@color/bg"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -34,8 +35,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:visibility="gone"
             android:src="@drawable/ic_search"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@id/editTextSearch"
             app:layout_constraintEnd_toEndOf="@id/editTextSearch"
             app:layout_constraintHorizontal_bias="0.935"
@@ -55,22 +56,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Spinner
+        android:id="@+id/year_spinner"
+        android:layout_width="322dp"
+        android:layout_height="52dp"
+        android:layout_weight="1"
+        android:background="@drawable/rounded_border_spinner_with_arrow"
+        android:contentDescription="Year"
+        android:elevation="15dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.391" />
+
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/year_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="166dp"
-        android:layout_marginEnd="265dp"
         android:fontFamily="@font/lato_bold"
-        android:text="@string/Semester"
+        android:text="Year"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/semester_spinner"
+        app:layout_constraintBottom_toTopOf="@+id/year_spinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Spinner
         android:id="@+id/semester_spinner"
@@ -86,7 +100,7 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.396" />
+        app:layout_constraintVertical_bias="0.248" />
 
     <TextView
         android:id="@+id/textView3"
@@ -101,6 +115,21 @@
         app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/lato_bold"
+        android:text="@string/Semester"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/semester_spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:layout_constraintVertical_bias="1.0" />
 
     <Spinner
@@ -160,6 +189,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/rep" />
 
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/go_button"
         android:layout_width="123dp"
@@ -186,9 +216,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/statusBar"
+        android:visibility="gone"
         app:itemIconSize="35dp"
-        app:itemPaddingBottom="0.5dp"
         app:itemIconTint="@color/navIcon"
+        app:itemPaddingBottom="0.5dp"
         app:itemTextColor="@color/navIcon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
