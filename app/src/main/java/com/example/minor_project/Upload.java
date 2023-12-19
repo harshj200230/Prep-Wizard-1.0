@@ -5,6 +5,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.icu.number.IntegerWidth;
 import android.net.Uri;
@@ -41,7 +44,24 @@ public class Upload extends AppCompatActivity {
         String selectedTerm = intent.getStringExtra("selectedTerm");
         String selectedYear = intent.getStringExtra("selectedYear");
         name = selectedSubject+"_"+selectedTerm+"_"+selectedYear;
-        binding.pdfName.setText("You are uploading for : \n\n"+name);
+        binding.pdfName.setText(name);
+
+        binding.pdfName.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // Get the text from the TextView
+                String textToCopy = binding.pdfName.getText().toString();
+
+                // Copy the text to the clipboard
+                copyToClipboard(textToCopy);
+
+                // Show a toast indicating that the text has been copied
+                Toast.makeText(Upload.this, "Text copied to clipboard", Toast.LENGTH_SHORT).show();
+
+                // Return true to consume the long click event
+                return true;
+            }
+        });
 //        Toast.makeText(this, "Name is : "+ name, Toast.LENGTH_SHORT).show();
         binding.check.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +91,17 @@ public class Upload extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void copyToClipboard(String text) {
+        // Get the ClipboardManager
+        ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+
+        // Create a ClipData object to store the text
+        ClipData clipData = ClipData.newPlainText("Copied Text", text);
+
+        // Set the data to the clipboard
+        clipboardManager.setPrimaryClip(clipData);
     }
 
     private void selectfiles() {

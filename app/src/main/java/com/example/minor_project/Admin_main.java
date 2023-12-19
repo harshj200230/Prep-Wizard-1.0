@@ -10,6 +10,8 @@ import android.widget.ArrayAdapter;
 import com.example.minor_project.databinding.ActivityAdminMainBinding;
 import com.example.minor_project.databinding.ActivityMainBinding;
 
+import java.util.Calendar;
+
 public class Admin_main extends AppCompatActivity {
 
     private ActivityAdminMainBinding binding;
@@ -50,12 +52,17 @@ public class Admin_main extends AppCompatActivity {
 
         binding.branchSpinner.setAdapter(availabilityAdapter3);
 
-        String[] availabilityOptions4 = {"2023", "2022","2021","2020"};
+        Calendar calendar = Calendar.getInstance();
+        int currentYear = calendar.get(Calendar.YEAR);
+        Integer[] years = new Integer[10];
+        for (int i = 0; i < 10; i++) {
+            years[i] = currentYear - i;
+        }
 
-        ArrayAdapter<String> availabilityAdapter4 = new ArrayAdapter<>(
+        ArrayAdapter<Integer> availabilityAdapter4 = new ArrayAdapter<>(
                 this,
                 R.layout.custom_spinner_dropdown_item,
-                availabilityOptions4
+                years
         );
 
         binding.yearSpinner.setAdapter(availabilityAdapter4);
