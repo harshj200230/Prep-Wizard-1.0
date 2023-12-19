@@ -61,16 +61,15 @@
         app:layout_constraintVertical_bias="0.184" />
 
 
-    <EditText
+    <TextView
         android:id="@+id/pdfName"
         android:layout_width="261dp"
         android:layout_height="48dp"
         android:layout_marginTop="268dp"
         android:ems="10"
+        android:maxLines="5"
+        android:singleLine="false"
         android:fontFamily="@font/inter_semibold"
-        android:hint="Enter PDF Name"
-        android:inputType="textPersonName"
-        android:visibility="gone"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

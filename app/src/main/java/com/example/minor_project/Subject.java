@@ -45,6 +45,14 @@ public class Subject extends AppCompatActivity {
             }
         });
 
+        binding.imageView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Subject.this,bookMarkView.class);
+                startActivity(intent);
+            }
+        });
+
         // Inside onCreate method in Subject activity
         Intent intent = getIntent();
         if (intent != null) {

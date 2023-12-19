@@ -63,6 +63,14 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
             }
         });
 
+        binding.imageView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PDFVIEW.this,bookMarkView.class);
+                startActivity(intent);
+            }
+        });
+
         Intent intent2 = getIntent();
         if (intent2 != null && intent2.hasExtra("searchQuery")) {
             searchQuery = intent2.getStringExtra("searchQuery");

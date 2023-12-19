@@ -41,7 +41,8 @@ public class Upload extends AppCompatActivity {
         String selectedTerm = intent.getStringExtra("selectedTerm");
         String selectedYear = intent.getStringExtra("selectedYear");
         name = selectedSubject+"_"+selectedTerm+"_"+selectedYear;
-        Toast.makeText(this, "Name is : "+ name, Toast.LENGTH_SHORT).show();
+        binding.pdfName.setText("You are uploading for : \n\n"+name);
+//        Toast.makeText(this, "Name is : "+ name, Toast.LENGTH_SHORT).show();
         binding.check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

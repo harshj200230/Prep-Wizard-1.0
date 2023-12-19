@@ -54,6 +54,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavHandler 
             }
         });
 
+        binding.imageView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,bookMarkView.class);
+                startActivity(intent);
+            }
+        });
+
         String[] availabilityOptions1 = {"I", "II","III","IV","V","VI","VII","VIII"};
 
         ArrayAdapter<String> availabilityAdapter1 = new ArrayAdapter<>(
