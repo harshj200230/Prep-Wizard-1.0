@@ -76,4 +76,21 @@
         app:layout_constraintStart_toEndOf="@+id/backbtn"
         app:layout_constraintTop_toTopOf="@+id/view" />
 
+    <TextView
+        android:id="@+id/marqueeText"
+        android:layout_width="414dp"
+        android:layout_height="31dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="(Long press to bookmark)"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        app:layout_constraintBottom_toTopOf="@+id/rv1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
