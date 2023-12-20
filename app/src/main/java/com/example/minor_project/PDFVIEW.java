@@ -42,6 +42,7 @@ public class PDFVIEW extends AppCompatActivity implements MainAdapter.OnItemClic
         super.onCreate(savedInstanceState);
         binding = ActivityPdfviewBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        NetworkUtils.checkInternetAndDisplayToast(this);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         int selectedIconColor = ContextCompat.getColor(this, R.color.purple_200);
 

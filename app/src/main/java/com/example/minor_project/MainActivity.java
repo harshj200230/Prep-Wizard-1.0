@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavHandler 
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        NetworkUtils.checkInternetAndDisplayToast(this);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         int selectedIconColor = ContextCompat.getColor(this, R.color.purple_200);
 

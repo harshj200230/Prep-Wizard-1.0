@@ -32,6 +32,7 @@ public class bookMarkView extends AppCompatActivity implements BookmarkAdapter.O
         super.onCreate(savedInstanceState);
         binding = ActivityBookMarkViewBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        NetworkUtils.checkInternetAndDisplayToast(this);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         int selectedIconColor = ContextCompat.getColor(this, R.color.purple_200);
 

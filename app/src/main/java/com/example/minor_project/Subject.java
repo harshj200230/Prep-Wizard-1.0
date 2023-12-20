@@ -28,6 +28,7 @@ public class Subject extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivitySubjectBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        NetworkUtils.checkInternetAndDisplayToast(this);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         int selectedIconColor = ContextCompat.getColor(this, R.color.purple_200);
 
