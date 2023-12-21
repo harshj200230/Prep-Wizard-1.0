@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.minor_project.databinding.ActivitySubjectBinding;
 import com.example.minor_project.databinding.ActivityUserBinding;
@@ -15,20 +16,6 @@ import com.example.minor_project.databinding.ActivityUserBinding;
 public class user extends AppCompatActivity {
 
     private ActivityUserBinding binding;
-    /*ImageView igAkshat = findViewById(R.id.igAkshat);
-    ImageView lnAkshat = findViewById(R.id.lnAkshat);
-    ImageView igHarsh = findViewById(R.id.igHarsh);
-    ImageView lnHarsh = findViewById(R.id.lnHarsh);
-
-     */
-
-    /*
-    public void openUrl(String url) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        startActivity(intent);
-    }
-    */
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,32 +38,91 @@ public class user extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        /*
-        binding.igAkshat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openUrl("https://www.instagram.com/_akshat_0143/");
-            }
-        });
-        binding.lnAkshat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openUrl("https://www.linkedin.com/in/akshat-vats-236382239/");
-            }
-        });
         binding.igHarsh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openUrl("https://www.instagram.com/harshj_30/");
+                String instagramUrl = "https://www.instagram.com/harshj_30/";
+
+                // Create an intent with the ACTION_VIEW action
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(instagramUrl));
+
+                // Set the package to Instagram if available
+                intent.setPackage("com.instagram.android");
+
+                // Check if there's an app to handle this intent
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                } else {
+                    // If no app can handle the intent, open in the browser
+                    intent.setPackage(null);
+                    startActivity(intent);
+                }
             }
         });
         binding.lnHarsh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openUrl("https://www.linkedin.com/in/harsh-joshi-322761128/");
+                String instagramUrl = "https://www.linkedin.com/in/harsh-joshi-322761128/";
+
+                // Create an intent with the ACTION_VIEW action
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(instagramUrl));
+
+                // Set the package to Instagram if available
+                intent.setPackage("com.instagram.android");
+
+                // Check if there's an app to handle this intent
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                } else {
+                    // If no app can handle the intent, open in the browser
+                    intent.setPackage(null);
+                    startActivity(intent);
+                }
+            }
+        });
+        binding.lnAkshat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String instagramUrl = "https://www.linkedin.com/in/akshat-vats-236382239/";
+
+                // Create an intent with the ACTION_VIEW action
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(instagramUrl));
+
+                // Set the package to Instagram if available
+                intent.setPackage("com.instagram.android");
+
+                // Check if there's an app to handle this intent
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                } else {
+                    // If no app can handle the intent, open in the browser
+                    intent.setPackage(null);
+                    startActivity(intent);
+                }
+            }
+        });binding.igAkshat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String instagramUrl = "https://www.instagram.com/_akshat_0143/";
+
+                // Create an intent with the ACTION_VIEW action
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(instagramUrl));
+
+                // Set the package to Instagram if available
+                intent.setPackage("com.instagram.android");
+
+                // Check if there's an app to handle this intent
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                } else {
+                    // If no app can handle the intent, open in the browser
+                    intent.setPackage(null);
+                    startActivity(intent);
+                }
             }
         });
 
-         */
+
+
     }
 }
