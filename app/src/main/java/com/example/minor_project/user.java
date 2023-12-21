@@ -38,6 +38,12 @@ public class user extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        binding.textView8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openGoogleForm();
+            }
+        });
         binding.igHarsh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,4 +132,23 @@ public class user extends AppCompatActivity {
 
 
     }
+
+    private void openGoogleForm() {
+        String googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLScTMuWhrV_2KCFyT53tdJ0ErroiWYsH72AJ5HBjQa--icUZVw/viewform?usp=sf_link";
+
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(googleFormUrl));
+
+        // Set the package to Instagram if available
+        intent.setPackage("com.instagram.android");
+
+        // Check if there's an app to handle this intent
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            // If no app can handle the intent, open in the browser
+            intent.setPackage(null);
+            startActivity(intent);
+        }
+    }
+
 }
