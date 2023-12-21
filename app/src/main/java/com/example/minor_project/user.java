@@ -32,7 +32,7 @@ public class user extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
-                .setMinimumFetchIntervalInSeconds(3600)  // Fetch every hour, adjust as needed
+                .setMinimumFetchIntervalInSeconds(30)  // Fetch every hour, adjust as needed
                 .build();
         firebaseRemoteConfig.setConfigSettingsAsync(configSettings);
 
@@ -151,11 +151,12 @@ public class user extends AppCompatActivity {
         firebaseRemoteConfig.fetchAndActivate().addOnCompleteListener(this, task -> {
             if (task.isSuccessful()) {
                 String latestVersion = firebaseRemoteConfig.getString("latest_app_version");
-//                Toast.makeText(this, "latest version is : "+ latestVersion, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "latest version is : "+ latestVersion, Toast.LENGTH_SHORT).show();
                 String currentVersion = getAppVersionName();  // Get the current version of your app
 
                 if (!latestVersion.equals(currentVersion)) {
                     // Notify the user that a newer version is available.
+                    binding.updateTV.setVisibility(View.VISIBLE);
                     Toast.makeText(user.this, "A newer version is available. Please update.", Toast.LENGTH_LONG).show();
                 }
             } else {
@@ -171,7 +172,7 @@ public class user extends AppCompatActivity {
 
             // Now, 'appName' contains the name of your current app
             String appNameString = appName.toString();
-            Toast.makeText(this, "version is : "+ appNameString, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Your version is : "+ appNameString, Toast.LENGTH_SHORT).show();
             return appNameString;
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
