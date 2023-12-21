@@ -100,7 +100,8 @@ public class user extends AppCompatActivity {
                     startActivity(intent);
                 }
             }
-        });binding.igAkshat.setOnClickListener(new View.OnClickListener() {
+        });
+        binding.igAkshat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String instagramUrl = "https://www.instagram.com/_akshat_0143/";
