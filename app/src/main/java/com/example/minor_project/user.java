@@ -143,6 +143,28 @@ public class user extends AppCompatActivity {
             }
         });
 
+        binding.updateTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String instagramUrl = "https://drive.google.com/drive/folders/1K_-1TMvJhxA0HAD5mCFzdzfBLv-dD9wA?usp=drive_link";
+
+                // Create an intent with the ACTION_VIEW action
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(instagramUrl));
+
+                // Set the package to Instagram if available
+                intent.setPackage("com.instagram.android");
+
+                // Check if there's an app to handle this intent
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                } else {
+                    // If no app can handle the intent, open in the browser
+                    intent.setPackage(null);
+                    startActivity(intent);
+                }
+            }
+        });
+
 
 
     }
