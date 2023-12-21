@@ -54,5 +54,7 @@ dependencies {
 
     implementation 'com.google.android.gms:play-services-auth:20.7.0'
     androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.6.0-alpha01'
+    implementation 'com.google.firebase:firebase-config:21.6.0'  // Replace with the latest version number
+
 
 }
