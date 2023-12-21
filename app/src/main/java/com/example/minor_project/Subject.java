@@ -77,11 +77,6 @@ public class Subject extends AppCompatActivity {
                 // Get the selected subject
                 String selectedSubject = subjects.get(position);
 
-                //Enable marquee
-                TextView marqueeText = findViewById(R.id.marqueeText);
-                marqueeText.setSelected(true);
-
-
                 // Get the selected term from the intent
                 Intent receivedIntent = getIntent();
                 String selectedTerm = receivedIntent.getStringExtra("selectedTerm");
