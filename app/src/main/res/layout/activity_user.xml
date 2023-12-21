@@ -217,24 +217,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
         android:fontFamily="@font/lato_bold"
-        android:text="Update Available!! Click here to update"
+        android:text="🔔Update Available!! Click here to update"
         android:textColor="#F44336"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="20dp"
-        android:layout_height="17dp"
-        android:layout_marginTop="88dp"
-        app:layout_constraintEnd_toStartOf="@+id/textView12"
-        app:layout_constraintHorizontal_bias="0.934"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:srcCompat="@drawable/ic_baseline_crisis_alert_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
