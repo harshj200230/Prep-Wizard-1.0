@@ -173,6 +173,7 @@ public class user extends AppCompatActivity {
         firebaseRemoteConfig.fetchAndActivate().addOnCompleteListener(this, task -> {
             if (task.isSuccessful()) {
                 String latestVersion = firebaseRemoteConfig.getString("latest_app_version");
+                String app_maintenance = firebaseRemoteConfig.getString("app_maintenance");
                 Toast.makeText(this, "latest version is : "+ latestVersion, Toast.LENGTH_SHORT).show();
                 String currentVersion = getAppVersionName();  // Get the current version of your app
 
@@ -180,6 +181,10 @@ public class user extends AppCompatActivity {
                     // Notify the user that a newer version is available.
                     binding.updateTV.setVisibility(View.VISIBLE);
                     Toast.makeText(user.this, "A newer version is available. Please update.", Toast.LENGTH_LONG).show();
+                }
+                else if(app_maintenance!=null){
+                    binding.updateTV.setText(app_maintenance);
+                    binding.updateTV.setVisibility(View.VISIBLE);
                 }
             } else {
                 Toast.makeText(user.this, "Failed to fetch remote config.", Toast.LENGTH_SHORT).show();
