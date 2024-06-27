@@ -14,8 +14,8 @@ public class login2 extends AppCompatActivity {
 
     private ActivityLogin2Binding binding;
 
-    private String userName = "Admin";
-    private String password = "blindinglights_10";
+    private String userName = "<setAdminName>";
+    private String password = "<setyoupassword>";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
